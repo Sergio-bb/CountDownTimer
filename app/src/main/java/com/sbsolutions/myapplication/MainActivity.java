@@ -17,8 +17,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int time = 180000; // en milisegundos
         cronometro = findViewById(R.id.creonometro);
+        CountDown(180000);
+    }
+
+    private void CountDown(int time) {
         new CountDownTimer(time, 1000) {
             public void onTick(long millisUntilFinished) {
                 NumberFormat f = new DecimalFormat("00");
